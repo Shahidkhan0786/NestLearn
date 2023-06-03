@@ -1,0 +1,13 @@
+POST http://localhost:3000/auth/signup HTTP/1.1
+content-type: application/json
+
+{
+    "email": "test@mail.com",
+    "password":"12345"
+}
+
+### Get a user
+
+GET http://localhost:3000/auth/3 HTTP/1.1
+
+

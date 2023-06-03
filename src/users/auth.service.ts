@@ -1,0 +1,15 @@
+import { BadRequestException, Injectable } from '@nestjs/common';
+import { UsersService } from './users.service';
+
+@Injectable({})
+export class AuthService {
+  constructor(private user: UsersService) {}
+
+  async signup({ email: string, password: string }) {
+    const users = await this.user.find(email);
+    if (users.length) {
+      throw new BadRequestException('email in use');
+    }
+  }
+  signin() {}
+}
